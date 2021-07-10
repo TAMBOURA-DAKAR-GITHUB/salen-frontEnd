@@ -1,0 +1,296 @@
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+      <img src="../../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a routerLink="" class="nav-link">
+                  <i class="nav-icon far fa-calendar-alt"></i>
+                  <p>
+                    Acceuil
+                    
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tree"></i>
+                  <p>
+                    Utilisateur
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/newutilisateur" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Nouveau utilisateur</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/utilisateur" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Liste utilisateur</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Mairie
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmairie" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau mairie</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/mairie" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste mairie</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Marché
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmarche" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau marché</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste marché</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Marchand
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmarchand" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau marchand</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/marchand" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste marchand</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Affectation
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/marchand-marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Marchand-marche</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/recouvreur-marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Recouvreur-marche</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="../calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li> -->
+
+          <li class="nav-header">Déconnexion</li>
+          <li class="nav-item">
+            <a href="../calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Se déconnecter
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Important</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Warning</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>Informational</p>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Marché</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a routerLink="">Accueil</a></li>
+              <li class="breadcrumb-item">Marché</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Nouveau marché</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Libelle</label>
+                        <input type="text" class="form-control" id="" placeholder="">
+                      </div>
+                      <!-- /.form-group -->
+
+                      <div class="form-group">
+                        <label for="">Longitude</label>
+                        <input type="text" class="form-control" id="" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Region</label>
+                        <select class="form-control select2bs4" style="width: 100%;">
+                          <option selected="selected">Bamako</option>
+                          <option>Alaska</option>
+                          <option>California</option>
+                          <option>Delaware</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Washington</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="">Latitude</label>
+                        <input type="text" class="form-control" id="" placeholder="">
+                      </div>                        
+
+                      <!-- /.form-group -->
+
+                      <!-- /.form-group -->
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-warning">Enregistrer</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>

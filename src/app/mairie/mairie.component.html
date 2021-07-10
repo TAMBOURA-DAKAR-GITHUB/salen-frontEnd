@@ -1,0 +1,441 @@
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../../index3.html" class="brand-link">
+      <img src="../../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a routerLink="" class="nav-link">
+                  <i class="nav-icon far fa-calendar-alt"></i>
+                  <p>
+                    Acceuil
+                    
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tree"></i>
+                  <p>
+                    Utilisateur
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/newutilisateur" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Nouveau utilisateur</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/utilisateur" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Liste utilisateur</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Mairie
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmairie" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau mairie</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/mairie" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste mairie</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Marché
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmarche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau marché</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste marché</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Marchand
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/newmarchand" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nouveau marchand</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/marchand" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste marchand</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Affectation
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/marchand-marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Marchand-marche</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/recouvreur-marche" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Recouvreur-marche</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="../calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li> -->
+
+          <li class="nav-header">Déconnexion</li>
+          <li class="nav-item">
+            <a href="../calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Se déconnecter
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Important</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Warning</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>Informational</p>
+            </a>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Mairie</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+              <li class="breadcrumb-item">Liste des mairies</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-12">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">La liste des mairies</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped" *ngIf="listeMairie">
+                  <thead>
+                  <tr>
+                    <th>Mairie N°</th>
+                    <th>Libelle Mairie</th>
+                    <th>Quartier(s)</th>
+                    <th>Type Mairie</th>
+                    <th>Commune</th>
+                  </tr>
+                  </thead>
+                  <tbody *ngFor="let mairie of listeMairie">
+                
+                  <tr>
+                    <td><button class="btn btn-danger"> <a (click)="onListeMarcher(mairie)"
+                      class="nav-icon fas fa-tree">{{mairie.idMairie}}</a> </button></td>
+                    <td>{{mairie.libelleMairie}}</td>
+                    <td>{{mairie.quartierMairie}}</td>
+                    <td>{{mairie.typeMairie}}</td>
+                    <td>{{mairie.commune.libelleCommune}}</td>
+                    <td><button class="btn btn-danger"> <a (click)="onDelete(mairie)"
+                      class="nav-icon fas fa-tree">Supp</a> </button></td>
+          <td><button class="btn btn-warning"> <a (click)="onUpdate(mairie)" class="far fa-circle nav-icon">Edit</a> </button>
+          </td> 
+                  </tr>
+                 
+                  </tbody>
+                  <tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+    <section class="content" *ngIf="listeMarcherByMairie">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-12">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">La liste des Marchers</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Marcher N°</th>
+                    <th>Libelle Marcher</th>
+                   
+                  </tr>
+                  </thead>
+                  <tbody *ngFor="let listemarcherbymairie of listeMarcherByMairie">
+                
+                  <tr>
+                    <td><button class="btn btn-danger"> <a (click)="onListePlace(listemarcherbymairie)"
+                      class="nav-icon fas fa-tree">{{listemarcherbymairie.idMarcher}}</a> </button></td>
+                    <td>{{listemarcherbymairie.libelleMarcher}}</td>
+
+            
+
+                  </tr>
+                 
+                  </tbody>
+                  <tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+
+    <section class="content" *ngIf="listePlaceByMarcher">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-12">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">La liste des Places Disponible</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Place N°</th>
+                    <th>Libelle Place</th>
+                   
+                  </tr>
+                  </thead>
+                  <tbody *ngFor="let listeplacebymarcher of listePlaceByMarcher">
+                
+                  <tr  *ngIf="!listeplacebymarcher.selected">
+                    <td><button class="btn btn-danger">
+                       <a class="nav-icon fas fa-tree">{{listeplacebymarcher.idPlace}}</a></button></td>
+                    <td>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" 
+                              name="{{listeplacebymarcher.idPlace}}"  
+                              [value]="listeplacebymarcher.idPlace" 
+                              (change)="getIdPlaceSelectionner($event, listeplacebymarcher.idPlace)">
+                              
+                        <label class="form-check-label" for="flexCheckDefault">
+                         {{listeplacebymarcher.numeroPlace}}
+                        </label>
+                      </div>
+                    </td>
+
+                  </tr>
+                 
+                  </tbody>
+                  <tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+
+      <div class="card-footer" style="margin-left: 25cm;">
+        
+
+        <button type="button" class="btn btn-primary" 
+        (click)="onListeUtilisateur()"
+        data-toggle="modal" data-target="#exampleModalCenter">
+        Choisir Utilisateur
+        </button>
+      </div>
+
+
+      
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-body">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">La Liste des Utilisateur</h5>
+          </div>
+  
+          <div class="modal-body">
+            <form #f="ngForm" (ngSubmit)="onAddPlaceToUtilisataur(f.value)">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Veuillez Choisir un Utilisateur:</label>
+                <select name="utilisateur" class="form-control" id="recipient-name" ngModel>
+                  <option 
+                  *ngFor="let listeutilisateurbymairie of listeUtilisateurByMarcher"
+                  value="{{listeutilisateurbymairie.idUtilisateur}}">
+                  {{listeutilisateurbymairie.codeUtilisateur}} {{listeutilisateurbymairie.nomUtilisateur}} {{listeutilisateurbymairie.prenomUtilisateur}} 
+                </option>
+                 
+                </select>
+              </div>
+  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger col-sm-4" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-primary col-sm-6">Affecter</button>
+              </div>
+            </form>
+          </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+      
+
+  </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+
+
+ 
+
+
+
+
+
+
