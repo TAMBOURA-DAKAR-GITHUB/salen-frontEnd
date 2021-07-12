@@ -20,6 +20,7 @@ export class MairieComponent implements OnInit {
    public listePlaceByMarcher :any;
    public listeUtilisateurByMarcher : any;
 
+
    public actuelMairie: number=0
 
     idplaceselected : number[]=[];
@@ -76,16 +77,19 @@ export class MairieComponent implements OnInit {
   }
 
 
-  onListePlace(listemarcherbymairie : any){
+  onListePlaceUtilisateur(listemarcherbymairie : any){
     this.mairieservice.getAllPlaceByMarcher(listemarcherbymairie.idMarcher)
     .subscribe(data =>{
       this.listePlaceByMarcher=data;
+     // console.log(this.listePlaceByMarcher)
      }, error=>{
        console.log(error);
        
      });
 
   }
+
+
 
   onListeUtilisateur(){
     this.mairieservice.getAllUtilisateurByMairie(this.actuelMairie)

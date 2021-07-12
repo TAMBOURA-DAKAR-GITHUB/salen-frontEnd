@@ -291,18 +291,20 @@
                   <thead>
                   <tr>
                     <th>Marcher N°</th>
-                    <th>Libelle Marcher</th>
+                    <th>Libelle Place Utilisateur</th>
+                    <!-- <th>Libelle Place Marchand</th> -->
                    
                   </tr>
                   </thead>
                   <tbody *ngFor="let listemarcherbymairie of listeMarcherByMairie">
                 
-                  <tr>
-                    <td><button class="btn btn-danger"> <a (click)="onListePlace(listemarcherbymairie)"
-                      class="nav-icon fas fa-tree">{{listemarcherbymairie.idMarcher}}</a> </button></td>
+                  <tr>                   
                     <td>{{listemarcherbymairie.libelleMarcher}}</td>
+                    <td><button class=""> <a (click)="onListePlaceUtilisateur(listemarcherbymairie)"
+                      class="btn btn-success">Affecter Place Utilisateur</a> </button></td>
 
-            
+                      <!-- <td><button class=""> <a (click)="onListePlaceMarchand(listemarcherbymairie)"
+                        class="btn btn-success">Affecter Place Marchand</a> </button></td> -->
 
                   </tr>
                  
@@ -343,7 +345,7 @@
                   </thead>
                   <tbody *ngFor="let listeplacebymarcher of listePlaceByMarcher">
                 
-                  <tr  *ngIf="!listeplacebymarcher.selected">
+                  <tr  *ngIf="!listeplacebymarcher.selectedUtilisateur">
                     <td><button class="btn btn-danger">
                        <a class="nav-icon fas fa-tree">{{listeplacebymarcher.idPlace}}</a></button></td>
                     <td>
@@ -374,6 +376,8 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
 
+
+
       <div class="card-footer" style="margin-left: 25cm;">
         
 
@@ -383,6 +387,8 @@
         Choisir Utilisateur
         </button>
       </div>
+      
+
 
 
       
