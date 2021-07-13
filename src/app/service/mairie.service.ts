@@ -14,6 +14,8 @@ export class MairieService {
   public hostplace = environment.placeurl;
   public hostutilisateur = environment.utilisateururl;
   public hostplaceToUtilisateur= environment.placetoutilisateururl
+  public hostmarchand= environment.marchandurl
+  public hostplaceToMarchand= environment.placeToMarchandurl
 
   constructor( private http : HttpClient) { }
 
@@ -53,20 +55,37 @@ getAllPlaceByMarcher(idMarcher: any){
 }
 
 // la methode pour recuperer la liste des utilisateur  pour une mairie donnee
-getAllUtilisateurByMairie(idMarcher: any){
-  return this.http.get<any>(this.hostutilisateur+"/listeUtilisateurById/"+idMarcher);
+getAllUtilisateurByMairie(idMairie: any){
+  return this.http.get<any>(this.hostutilisateur+"/listeUtilisateurById/"+idMairie);
 }
+
+// la methode pour recuperer la liste des marchand  pour une marcher
+getAllMarchandByMarcher(idMarcher: any){
+  console.log(idMarcher)
+  return this.http.get<any>(this.hostmarchand+"/listeMarhandByMarcher/"+idMarcher);
+}
+
+
 
 // la methode pour affecter les places a un utilisateur
 public affecterPlaceToUtilisateur(host:any , utilisateur:any, place:any ){
  console.log(utilisateur)
  console.log(place)
   
-
   return this.http.post(this.hostplaceToUtilisateur+"/placeToUtilisateur" ,{"utilisateur":utilisateur, "places":place});
- 
-  // faire une boucle pour recuperer les donnees 
+
   
 } 
+
+
+// la methode pour affecter les places a un marchand
+public affecterPlaceToMarchand(host:any , marchand:any, place:any ){
+  console.log(marchand)
+  console.log(place)
+   
+   return this.http.post(this.hostplaceToMarchand+"/placeToMarchand" ,{"marchand":marchand, "places":place});
+ 
+   
+ } 
 
 }

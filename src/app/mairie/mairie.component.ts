@@ -19,13 +19,17 @@ export class MairieComponent implements OnInit {
    public listeMarcherByMairie : any;
    public listePlaceByMarcher :any;
    public listeUtilisateurByMarcher : any;
+   public listePlaceByMarchand : any;
+   public listeMarchandByMarcher : any;
 
 
-   public actuelMairie: number=0
+   public actuelMairie: number=0;
+   public idmarcheractuel: number= 0;
 
     idplaceselected : number[]=[];
 
     placeToUtilisateur: any;
+    placeToMarchand : any
 
   constructor( private mairieservice: MairieService , private http: HttpClient , private router : Router) { }
 
@@ -36,7 +40,6 @@ export class MairieComponent implements OnInit {
     this.mairieservice.getAllMarie()
     .subscribe(data =>{
       this.listeMairie=data;
-      console.log(this.listeMairie)
     }, error=>{
       console.log(error);
       
@@ -78,10 +81,25 @@ export class MairieComponent implements OnInit {
 
 
   onListePlaceUtilisateur(listemarcherbymairie : any){
+   
     this.mairieservice.getAllPlaceByMarcher(listemarcherbymairie.idMarcher)
     .subscribe(data =>{
       this.listePlaceByMarcher=data;
      // console.log(this.listePlaceByMarcher)
+     }, error=>{
+       console.log(error);
+       
+     });
+
+  }
+
+
+  onListePlaceMarchand(listemarcherbymairie : any){
+    this.idmarcheractuel= listemarcherbymairie.idMarcher
+    this.mairieservice.getAllPlaceByMarcher(listemarcherbymairie.idMarcher)
+    .subscribe(data =>{
+      this.listePlaceByMarchand=data;
+      console.log( this.listePlaceByMarchand)
      }, error=>{
        console.log(error);
        
@@ -103,6 +121,17 @@ export class MairieComponent implements OnInit {
 
   }
 
+  onListeMarchandByMarcher(){
+    this.mairieservice.getAllMarchandByMarcher(this.idmarcheractuel)
+    .subscribe(data =>{
+      this.listeMarchandByMarcher=data;
+      console.log(this.listeMarchandByMarcher);
+     }, error=>{
+       console.log(error);
+       
+     });
+  }
+
 
   getIdPlaceSelectionner(ev : any, id: number){
     if(ev.target.checked){
@@ -121,8 +150,7 @@ export class MairieComponent implements OnInit {
     this.mairieservice.affecterPlaceToUtilisateur(this.mairieservice.hostplaceToUtilisateur+"/placeToUtilisateur", donnee.utilisateur , this.idplaceselected).
     subscribe(data =>{
       this.placeToUtilisateur=data;
-    
-      console.log(this.placeToUtilisateur);
+     // console.log(this.placeToUtilisateur)
      }, error=>{
        console.log(error);
        
@@ -130,6 +158,19 @@ export class MairieComponent implements OnInit {
    // console.log(donnee.utilisateur);
    // console.log(this.idplaceselected);
     
+  }
+
+  onAddPlaceToMachand(donnee : any){
+    console.log(donnee);
+    this.mairieservice.affecterPlaceToMarchand(this.mairieservice.hostplaceToMarchand+"/placeToMarchand", donnee.marchand , this.idplaceselected).
+    subscribe(data =>{
+      this.placeToMarchand=data;
+    
+      console.log(this.placeToMarchand);
+     }, error=>{
+       console.log(error);
+       
+     });
   }
 
  

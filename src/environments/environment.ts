@@ -10,7 +10,11 @@ export const environment = {
   marcherurl:"http://localhost:9012/api/marcher",
   utilisateururl:"http://localhost:9012/api/utilisateur" ,
   placetoutilisateururl:"http://localhost:9012/api/placeToUtilisateur",
-  placeToUtilisateururl:"http://localhost:9012/api/placeToUtilisateur"
+  placeToUtilisateururl:"http://localhost:9012/api/placeToUtilisateur",
+  marchandurl:"http://localhost:9012/api/marchand",
+  placeToMarchandurl:"http://localhost:9012/api/placeToMarchand"
+  
+
 
 
   

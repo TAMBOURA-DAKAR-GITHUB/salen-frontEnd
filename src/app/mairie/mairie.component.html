@@ -249,8 +249,8 @@
                   <tbody *ngFor="let mairie of listeMairie">
                 
                   <tr>
-                    <td><button class="btn btn-danger"> <a (click)="onListeMarcher(mairie)"
-                      class="nav-icon fas fa-tree">{{mairie.idMairie}}</a> </button></td>
+                    <td><button class="btn btn-success"> <a (click)="onListeMarcher(mairie)"
+                      class="">Marcher{{mairie.idMairie}} </a> </button></td>
                     <td>{{mairie.libelleMairie}}</td>
                     <td>{{mairie.quartierMairie}}</td>
                     <td>{{mairie.typeMairie}}</td>
@@ -300,11 +300,11 @@
                 
                   <tr>                   
                     <td>{{listemarcherbymairie.libelleMarcher}}</td>
-                    <td><button class=""> <a (click)="onListePlaceUtilisateur(listemarcherbymairie)"
+                    <td><button><a (click)="onListePlaceUtilisateur(listemarcherbymairie)"
                       class="btn btn-success">Affecter Place Utilisateur</a> </button></td>
 
-                      <!-- <td><button class=""> <a (click)="onListePlaceMarchand(listemarcherbymairie)"
-                        class="btn btn-success">Affecter Place Marchand</a> </button></td> -->
+                      <td><button> <a (click)="onListePlaceMarchand(listemarcherbymairie)"
+                        class="btn btn-success">Affecter Place Marchand</a> </button></td>
 
                   </tr>
                  
@@ -400,7 +400,7 @@
       <div class="modal-body">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">La Liste des Utilisateur</h5>
+            <h5 class="modal-title" id="exampleModalLabel">La Liste des Utilisateurs</h5>
           </div>
   
           <div class="modal-body">
@@ -412,6 +412,123 @@
                   *ngFor="let listeutilisateurbymairie of listeUtilisateurByMarcher"
                   value="{{listeutilisateurbymairie.idUtilisateur}}">
                   {{listeutilisateurbymairie.codeUtilisateur}} {{listeutilisateurbymairie.nomUtilisateur}} {{listeutilisateurbymairie.prenomUtilisateur}} 
+                </option>
+                 
+                </select>
+              </div>
+  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger col-sm-4" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-primary col-sm-6">Affecter</button>
+              </div>
+            </form>
+          </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+      
+
+  </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <section class="content" *ngIf="listePlaceByMarchand">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-12">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">La liste des Places Disponible</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Place N°</th>
+                    <th>Libelle Place</th>
+                   
+                  </tr>
+                  </thead>
+                  <tbody *ngFor="let listeplacebymarchand of listePlaceByMarchand">
+                
+                  <tr  *ngIf="!listeplacebymarchand.selectedMarchand">
+                    <td><button class="btn btn-danger">
+                       <a class="nav-icon fas fa-tree">{{listeplacebymarchand.idPlace}}</a></button></td>
+                    <td>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" 
+                              name="{{listeplacebymarchand.idPlace}}"  
+                              [value]="listeplacebymarchand.idPlace" 
+                              (change)="getIdPlaceSelectionner($event, listeplacebymarchand.idPlace)">
+                              
+                        <label class="form-check-label" for="flexCheckDefault">
+                         {{listeplacebymarchand.numeroPlace}}
+                        </label>
+                      </div>
+                    </td>
+
+                  </tr>
+                 
+                  </tbody>
+                  <tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+
+
+
+      <div class="card-footer" style="margin-left: 25cm;">
+        
+
+        <button type="button" class="btn btn-primary" 
+        (click)="onListeMarchandByMarcher()"
+        data-toggle="modal" data-target="#exampleModalCenter">
+        Choisir Un Marchand
+        </button>
+      </div>
+      
+
+
+
+      
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    
+      <div class="modal-body">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">La Liste des Marchand</h5>
+          </div>
+  
+          <div class="modal-body">
+            <form #f="ngForm" (ngSubmit)="onAddPlaceToMachand(f.value)">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Veuillez Choisir un Marchand:</label>
+                <select name="marchand" class="form-control" id="recipient-name" ngModel>
+                  <option 
+                  *ngFor="let listeMarchandBymarcher of listeMarchandByMarcher"
+                  value="{{listeMarchandBymarcher.idMarchand}}">
+                  {{listeMarchandBymarcher.nomMarchand}} {{listeMarchandBymarcher.prenomMarchand}} {{listeMarchandBymarcher.marcher.libelleMarcher}} 
                 </option>
                  
                 </select>
