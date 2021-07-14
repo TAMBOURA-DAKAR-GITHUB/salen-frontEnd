@@ -20,6 +20,6 @@ export class UtilisateurService {
 getAllPlaceByUtilisateur(idUtilisateur: any){
   console.log(idUtilisateur);
   return this.http.get<any>(this.host+"/listeByPlaceUtilisateur/"+idUtilisateur);
-}
+}   
 
 }

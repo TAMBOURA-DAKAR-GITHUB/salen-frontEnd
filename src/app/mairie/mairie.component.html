@@ -250,15 +250,19 @@
                 
                   <tr>
                     <td><button class="btn btn-success"> <a (click)="onListeMarcher(mairie)"
-                      class="">Marcher{{mairie.idMairie}} </a> </button></td>
+                      class="">Marcher N° : {{mairie.idMairie}} </a> </button></td>
                     <td>{{mairie.libelleMairie}}</td>
                     <td>{{mairie.quartierMairie}}</td>
                     <td>{{mairie.typeMairie}}</td>
                     <td>{{mairie.commune.libelleCommune}}</td>
-                    <td><button class="btn btn-danger"> <a (click)="onDelete(mairie)"
-                      class="nav-icon fas fa-tree">Supp</a> </button></td>
-          <td><button class="btn btn-warning"> <a (click)="onUpdate(mairie)" class="far fa-circle nav-icon">Edit</a> </button>
-          </td> 
+
+                    <td><button class="btn btn-danger"> 
+                      <a (click)="onDelete(mairie)"
+                      ><i class="fa fa-trash-o fa-lg"></i></a> </button></td>
+
+                    <td><button class="btn btn-warning"> 
+                      <a (click)="onUpdate(mairie)">
+                        <i class="fa fa-pencil" aria-hidden="true"></i></a> </button></td> 
                   </tr>
                  
                   </tbody>
@@ -300,11 +304,13 @@
                 
                   <tr>                   
                     <td>{{listemarcherbymairie.libelleMarcher}}</td>
-                    <td><button><a (click)="onListePlaceUtilisateur(listemarcherbymairie)"
-                      class="btn btn-success">Affecter Place Utilisateur</a> </button></td>
 
-                      <td><button> <a (click)="onListePlaceMarchand(listemarcherbymairie)"
-                        class="btn btn-success">Affecter Place Marchand</a> </button></td>
+                    <td><button class="btn btn-success"> 
+                      <a (click)="onListePlaceUtilisateur(listemarcherbymairie)">
+                        Affecter Place Utilisateur</a></button></td>
+
+                      <td><button class="btn btn-success"> <a (click)="onListePlaceMarchand(listemarcherbymairie)"
+                        >Affecter Place Marchand</a> </button></td>
 
                   </tr>
                  
@@ -346,19 +352,21 @@
                   <tbody *ngFor="let listeplacebymarcher of listePlaceByMarcher">
                 
                   <tr  *ngIf="!listeplacebymarcher.selectedUtilisateur">
-                    <td><button class="btn btn-danger">
-                       <a class="nav-icon fas fa-tree">{{listeplacebymarcher.idPlace}}</a></button></td>
+                    <td><button class="btn btn-success">
+                       <a class="">Place : {{listeplacebymarcher.idPlace}}</a></button></td>
                     <td>
+
 
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" 
-                              name="{{listeplacebymarcher.idPlace}}"  
-                              [value]="listeplacebymarcher.idPlace" 
-                              (change)="getIdPlaceSelectionner($event, listeplacebymarcher.idPlace)">
-                              
-                        <label class="form-check-label" for="flexCheckDefault">
-                         {{listeplacebymarcher.numeroPlace}}
-                        </label>
+                        [value]="listeplacebymarcher.idPlace"  
+                        name="{{listeplacebymarcher.idPlace}}" 
+                        (change)="getIdPlaceSelectionner($event, listeplacebymarcher.idPlace)"
+                        >
+                      
+                        <label class="form-check-label btn btn-success" style="margin-left: 20px;">
+                          {{listeplacebymarcher.numeroPlace}}
+                         </label>
                       </div>
                     </td>
 
@@ -381,16 +389,13 @@
       <div class="card-footer" style="margin-left: 25cm;">
         
 
-        <button type="button" class="btn btn-primary" 
+        <button type="button" class="btn btn-success" 
         (click)="onListeUtilisateur()"
         data-toggle="modal" data-target="#exampleModalCenter">
         Choisir Utilisateur
         </button>
       </div>
       
-
-
-
       
   <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -406,7 +411,8 @@
           <div class="modal-body">
             <form #f="ngForm" (ngSubmit)="onAddPlaceToUtilisataur(f.value)">
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Veuillez Choisir un Utilisateur:</label>
+                <label for="recipient-name" class="col-form-label btn btn-success col-sm-12">Veuillez Choisir un Utilisateur:</label>
+               <br><br>
                 <select name="utilisateur" class="form-control" id="recipient-name" ngModel>
                   <option 
                   *ngFor="let listeutilisateurbymairie of listeUtilisateurByMarcher"
@@ -419,7 +425,7 @@
   
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger col-sm-4" data-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary col-sm-6">Affecter</button>
+                <button type="submit" class="btn btn-success col-sm-6">Affecter</button>
               </div>
             </form>
           </div>
@@ -463,17 +469,17 @@
                   <tbody *ngFor="let listeplacebymarchand of listePlaceByMarchand">
                 
                   <tr  *ngIf="!listeplacebymarchand.selectedMarchand">
-                    <td><button class="btn btn-danger">
-                       <a class="nav-icon fas fa-tree">{{listeplacebymarchand.idPlace}}</a></button></td>
+                    <td><button class="btn btn-success">
+                       <a >Place : {{listeplacebymarchand.idPlace}}</a></button></td>
                     <td>
 
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" 
-                              name="{{listeplacebymarchand.idPlace}}"  
-                              [value]="listeplacebymarchand.idPlace" 
-                              (change)="getIdPlaceSelectionner($event, listeplacebymarchand.idPlace)">
-                              
-                        <label class="form-check-label" for="flexCheckDefault">
+                          <input class="form-check-input" type="checkbox" 
+                          name="{{listeplacebymarchand.idPlace}}"  
+                          [value]="listeplacebymarchand.idPlace" 
+                          (change)="getIdPlaceSelectionner($event, listeplacebymarchand.idPlace)"
+                          >                    
+                        <label class="form-check-label btn btn-success" style="margin-left: 20px;">
                          {{listeplacebymarchand.numeroPlace}}
                         </label>
                       </div>
@@ -498,16 +504,12 @@
       <div class="card-footer" style="margin-left: 25cm;">
         
 
-        <button type="button" class="btn btn-primary" 
+        <button type="button" class="btn btn-success" 
         (click)="onListeMarchandByMarcher()"
         data-toggle="modal" data-target="#exampleModalCenter">
         Choisir Un Marchand
         </button>
       </div>
-      
-
-
-
       
   <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -523,7 +525,8 @@
           <div class="modal-body">
             <form #f="ngForm" (ngSubmit)="onAddPlaceToMachand(f.value)">
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Veuillez Choisir un Marchand:</label>
+                <label for="recipient-name" class="col-form-label btn btn-success col-sm-12">Veuillez Choisir un Marchand:</label>
+                <br><br>
                 <select name="marchand" class="form-control" id="recipient-name" ngModel>
                   <option 
                   *ngFor="let listeMarchandBymarcher of listeMarchandByMarcher"
@@ -536,7 +539,7 @@
   
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger col-sm-4" data-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary col-sm-6">Affecter</button>
+                <button type="submit" class="btn btn-success col-sm-6">Affecter</button>
               </div>
             </form>
           </div>

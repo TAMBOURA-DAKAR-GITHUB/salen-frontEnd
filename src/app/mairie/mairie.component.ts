@@ -165,7 +165,6 @@ export class MairieComponent implements OnInit {
     this.mairieservice.affecterPlaceToMarchand(this.mairieservice.hostplaceToMarchand+"/placeToMarchand", donnee.marchand , this.idplaceselected).
     subscribe(data =>{
       this.placeToMarchand=data;
-    
       console.log(this.placeToMarchand);
      }, error=>{
        console.log(error);
