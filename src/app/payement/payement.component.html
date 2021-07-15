@@ -68,8 +68,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-            <a href="#" class="nav-link">
+              <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Mairie
@@ -78,13 +78,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a routerLink="/newmairie" class="nav-link">
+                <a routerLink="/newmairie" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Nouveau mairie</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/mairie" class="nav-link">
+                <a routerLink="/mairie" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste mairie</p>
                 </a>
@@ -114,8 +114,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Marchand
@@ -130,7 +130,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/marchand" class="nav-link active">
+                <a routerLink="/marchand" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste marchand</p>
                 </a>
@@ -149,13 +149,13 @@
               <li class="nav-item">
                 <a routerLink="/marchand-marche" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Marchand-marche</p>
+                  <p>Place-Utilisateur</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a routerLink="/recouvreur-marche" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Recouvreur-marche</p>
+                  <p>Place-Marchand</p>
                 </a>
               </li>
             </ul>
@@ -204,32 +204,19 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>Marchand</h1>
-            </div>
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item">Liste des marchands</li>
-              </ol>
-            </div>
-          </div>
-        </div><!-- /.container-fluid -->
-      </section>
+ <br><br>
   
-      <!-- Main content -->
-      <section class="content">
+      <!-- afficher la  liste  des marchands par utilisateur -->
+      <section class="content" *ngIf="listeMarchandByUtilisateur">
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
             <div class="col-12">
-              <div class="card card-warning">
+              <div class="card card-success">
                 <div class="card-header">
                   <h3 class="card-title">La liste des marcahnds</h3>
                 </div>
@@ -239,27 +226,16 @@
                     <thead>
                     <tr>
                       <th>Rendering engine</th>
-                      <th>Browser</th>
-                      <th>Platform(s)</th>
-                      <th>Engine version</th>
-                      <th>CSS grade</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let listeMarchandByutilisateur of listeMarchandByUtilisateur">
                    
-                    <tr>
-                      <td>Misc</td>
-                      <td>PSP browser</td>
-                      <td>PSP</td>
-                      <td>-</td>
-                      <td>C</td>
-                    </tr>
-                    <tr>
-                      <td>Other browsers</td>
-                      <td>All others</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>U</td>
+                    <tr >
+                      <td class="btn btn-success col-md-12" (click)="onListePlaceByMarchand(listeMarchandByutilisateur[0])">
+                           {{listeMarchandByutilisateur[0]}}     
+                           {{listeMarchandByutilisateur[1]}}  
+                           {{listeMarchandByutilisateur[2]}}  </td>
+                     
                     </tr>
                     </tbody>
                     <tfoot>
@@ -274,5 +250,113 @@
           <!-- /.row -->
         </div><!-- /.container-fluid -->
       </section>
+
+      <br>
+      <section class="content" *ngIf="listePlaceByMarchand">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-12">
+              <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">La liste des Place</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                      <th>place</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let listePlaceBymarchand of listePlaceByMarchand">
+                   
+                    <tr>
+                    
+
+                          <div class="btn btn-success">
+                            <input class="form-check-input" type="checkbox" 
+                            [value]="listePlaceBymarchand[0]"  
+                            name="{{listePlaceBymarchand[0]}}" 
+                            (change)="getIdPlaceSelectionner($event, listePlaceBymarchand[0])"
+                            >
+                          
+                            <label class="form-check-label btn btn-success" style="margin-left: 20px;">
+                                {{listePlaceBymarchand[0]}} 
+                                {{listePlaceBymarchand[1]}}
+                             </label>
+                          </div>
+                     
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                 
+                  </table>
+                  <div class="card-footer" style="margin-left: 25cm;">
+        
+
+                    <button type="button" class="btn btn-success" 
+                    data-toggle="modal" data-target="#exampleModalCenter">
+                    Payement
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+            </div>
+  
+            <!--/.col (right) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+
+
+   <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title btn btn-success col-md-12" id="exampleModalLabel">Payement</h5>
+            </div>
+                <form  #f="ngForm" (ngSubmit)="onAddPayement(f.value)">
+                    <div class="card-body">
+                      <div class="row">
+                                  <div class="form-group col-md-6">
+                                    <!-- <label for="">Libelle Place</label> -->
+                                    <input type="text" class="form-control" id="montantPayement"
+                                    placeholder="montant " name="montantPayement" ngModel>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                      <!-- <label for="">Libelle Place</label> -->
+                                      <input type="date" class="form-control" id="datePayement"
+                                      placeholder="Date " name="datePayement" ngModel>
+                                    </div> 
+                        <!-- /.col -->
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+    
+                    <div class="form-group col-md-12">
+                        <!-- <label for=""></label> -->
+                        <button type="submit" class="btn btn-success form-control">Payer</button>
+
+                      </div>
+                      
+                  </form>
+
+      
+      </div>
+    </div>
+  </div>
+        
+  
+    </div>
+
+
+
+
       <!-- /.content -->
     </div>
+

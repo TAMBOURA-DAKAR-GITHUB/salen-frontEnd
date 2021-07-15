@@ -12,7 +12,8 @@ export const environment = {
   placetoutilisateururl:"http://localhost:9012/api/placeToUtilisateur",
   placeToUtilisateururl:"http://localhost:9012/api/placeToUtilisateur",
   marchandurl:"http://localhost:9012/api/marchand",
-  placeToMarchandurl:"http://localhost:9012/api/placeToMarchand"
+  placeToMarchandurl:"http://localhost:9012/api/placeToMarchand",
+  payementurl:"http://localhost:9012/api/payement"
   
 
 

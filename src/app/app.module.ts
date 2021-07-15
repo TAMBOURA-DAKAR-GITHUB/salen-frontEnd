@@ -26,6 +26,7 @@ import { ModifiermairieComponent } from './modifier/modifiermairie/modifiermairi
 import { PlaceComponent } from './place/place.component';
 import { PlaceUtilisateurComponent } from './place-utilisateur/place-utilisateur.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PayementComponent } from './payement/payement.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RecouvreurMarcheComponent,
     ModifiermairieComponent,
     PlaceComponent,
-    PlaceUtilisateurComponent
+    PlaceUtilisateurComponent,
+    PayementComponent
   ],
   imports: [
     BrowserModule,

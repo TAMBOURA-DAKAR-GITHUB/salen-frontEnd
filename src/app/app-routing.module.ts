@@ -10,6 +10,7 @@ import { NewmairieComponent } from './newmairie/newmairie.component';
 import { NewmarchandComponent } from './newmarchand/newmarchand.component';
 import { NewmarcheComponent } from './newmarche/newmarche.component';
 import { NewutilisateurComponent } from './newutilisateur/newutilisateur.component';
+import { PayementComponent } from './payement/payement.component';
 import { PlaceComponent } from './place/place.component';
 import { RecouvreurMarcheComponent } from './recouvreur-marche/recouvreur-marche.component';
 import { UpdatemairieComponent } from './updatemairie/updatemairie.component';
@@ -53,6 +54,9 @@ const routes: Routes = [
   },
   {
     path:"place", component:PlaceComponent
+  },
+  {
+    path:"payement", component:PayementComponent  
   },
   {
     path:"", component:AccueilComponent
