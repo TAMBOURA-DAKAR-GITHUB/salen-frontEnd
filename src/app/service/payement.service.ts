@@ -28,9 +28,10 @@ public addPayement(host:any , marchand: any,  utilisateur:any, place:any , donne
   console.log(utilisateur)
   console.log(place)
   console.log(marchand)
-  console.log(donnee)
+  let montantdonne= donnee.montant
+  let dateP= donnee.datePayement
    
-   return this.http.post(this.host+"/addPayement" ,{"marchand":marchand, "utilisateur":utilisateur, "places":place, donnee});
+   return this.http.post(this.host+"/addPayement" ,{"marchand":marchand, "utilisateur":utilisateur, "places":place, "montant": montantdonne , "datePayement" :dateP});
  
    
  } 
