@@ -226,6 +226,7 @@
   
       <!-- Main content -->
       <section class="content">
+        
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
@@ -237,9 +238,16 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-               
+                <div *ngIf="validemairie" class="alert alert-success" role="alert">
+                  {{messagesuccess}}
+                </div>
+                <div *ngIf="invalidmairie" class="alert alert-danger" role="alert">
+                  {{messageserror}}
+                </div>
+
                 <form  #f="ngForm" (ngSubmit)="onAddMairie(f.value)">
-            
+                  
+                 
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-6"> 

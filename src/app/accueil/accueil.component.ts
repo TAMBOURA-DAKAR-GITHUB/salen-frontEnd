@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnexionService } from '../security/service/connexion.service';
 
 @Component({
   selector: 'app-accueil',
@@ -12,4 +13,6 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ 
+  
 }

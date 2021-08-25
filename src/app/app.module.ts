@@ -27,6 +27,8 @@ import { PlaceComponent } from './place/place.component';
 import { PlaceUtilisateurComponent } from './place-utilisateur/place-utilisateur.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PayementComponent } from './payement/payement.component';
+import { LoginComponent } from './security/login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { PayementComponent } from './payement/payement.component';
     ModifiermairieComponent,
     PlaceComponent,
     PlaceUtilisateurComponent,
-    PayementComponent
+    PayementComponent,
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

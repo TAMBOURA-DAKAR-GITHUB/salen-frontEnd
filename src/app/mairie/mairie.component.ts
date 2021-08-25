@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { ConnexionService } from '../security/service/connexion.service';
 import { MairieService } from '../service/mairie.service';
 import { UtilisateurComponent } from '../utilisateur/utilisateur.component';
 
@@ -31,7 +32,9 @@ export class MairieComponent implements OnInit {
     placeToUtilisateur: any;
     placeToMarchand : any
 
-  constructor( private mairieservice: MairieService , private http: HttpClient , private router : Router) { }
+  constructor( private mairieservice: MairieService , 
+              private http: HttpClient , private router : Router,
+              public connexion : ConnexionService) { }
 
  
 
